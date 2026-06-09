@@ -159,4 +159,20 @@ export const QUESTIONS = [
     difficulty: 'Hard',
     description: 'Kanban board with HTML5 DnD — drag cards between columns, keyboard move fallback.',
   },
+  {
+    id: 'file-explorer',
+    title: 'File Explorer',
+    path: '/file-explorer',
+    category: 'Navigation',
+    difficulty: 'Medium',
+    description: 'Directory-style file browser — click folders to enter, breadcrumb to go back. O(1) path-as-object-reference navigation with unlimited nesting depth.',
+  },
+  {
+    id: 'state-management',
+    title: 'State Management Showdown',
+    path: '/state-management',
+    category: 'State & Data Fetching',
+    difficulty: 'Hard',
+    description: '7 ways to fetch and display posts from a real API — fetch, Axios, Context API, Redux Classic, RTK, RTK Query, and Zustand. Includes live comparison table.',
+  },
 ];

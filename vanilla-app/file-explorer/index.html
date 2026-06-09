@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File Explorer — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+
+    <div class="page-header">
+      <h1 class="heading">File Explorer</h1>
+      <p class="subheading">
+        Directory navigator — click a folder to enter it, use the breadcrumb to go back.
+        Supports unlimited nesting depth.
+      </p>
+    </div>
+
+    <div class="explorer-pane">
+      <!-- Breadcrumb bar: scrolls horizontally for very deep paths -->
+      <nav class="breadcrumb" aria-label="Folder navigation">
+        <ol id="breadcrumb-list" class="breadcrumb-list"></ol>
+      </nav>
+
+      <!-- Toolbar: item count -->
+      <div class="toolbar">
+        <span id="item-count" class="item-count"></span>
+      </div>
+
+      <!-- Grid or empty state rendered here by script.js -->
+      <div id="grid-wrapper" class="grid-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

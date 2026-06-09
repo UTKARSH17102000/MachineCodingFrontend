@@ -21,6 +21,8 @@ import NestedComments from '@/pages/questions/NestedComments/CommentThread';
 import TreeCheckbox from '@/pages/questions/TreeCheckbox/TreeCheckbox';
 import ComplexSidebar from '@/pages/questions/ComplexSidebar/ComplexSidebar';
 import JiraBoard from '@/pages/questions/JiraBoard/JiraBoard';
+import StateManagement from '@/pages/questions/StateManagement/StateManagement';
+import FileExplorer from '@/pages/questions/FileExplorer/FileExplorer';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,8 @@ const router = createBrowserRouter([
       { path: 'tree-checkbox',      element: <TreeCheckbox /> },
       { path: 'complex-sidebar',    element: <ComplexSidebar /> },
       { path: 'jira-board',         element: <JiraBoard /> },
+      { path: 'state-management',   element: <StateManagement /> },
+      { path: 'file-explorer',      element: <FileExplorer /> },
     ],
   },
 ]);

@@ -1,0 +1,251 @@
+/* ── Page shell ──────────────────────────────────────────────────────────────
+   Consistent with every other question: flex column, same heading sizes.      */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.heading {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.subheading {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Explorer window ─────────────────────────────────────────────────────────
+   Single bordered pane that contains breadcrumb + toolbar + grid.
+   overflow: hidden clips the breadcrumb/toolbar flush with the border-radius.  */
+.explorerPane {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Breadcrumb bar ──────────────────────────────────────────────────────────
+   Optimization: overflow-x: auto lets the breadcrumb scroll horizontally
+   when the path is very long (e.g. 8+ levels deep) instead of wrapping
+   or truncating. The scrollbar is hidden visually but still functional.        */
+.breadcrumb {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  flex-shrink: 0;
+}
+
+.breadcrumb::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcrumbList {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.breadcrumbBtn {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-primary);
+  background: transparent;
+  border: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  line-height: 1.4;
+}
+
+.breadcrumbBtn:hover {
+  background: var(--color-tag-bg);
+}
+
+.breadcrumbBtn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.breadcrumbCurrent {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-2);
+  line-height: 1.4;
+}
+
+.breadcrumbSep {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────────────  */
+.toolbar {
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.itemCount {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+/* ── File / Folder grid ──────────────────────────────────────────────────────
+   Optimization: repeat(auto-fill, minmax(140px, 1fr))
+   WHY: auto-fill calculates the column count from available width at paint time.
+   minmax(140px, 1fr) ensures each cell is at least 140px wide and grows evenly.
+   WHAT IT IMPROVES: The grid is fully responsive with zero JavaScript —
+   no ResizeObserver, no media queries needed. The browser handles everything.   */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-3);
+  padding: var(--space-4);
+  list-style: none;
+  margin: 0;
+  flex: 1;
+  align-content: start; /* stack from top — don't stretch rows to fill height */
+}
+
+/* ── Item wrapper (list item shell) ──────────────────────────────────────────  */
+.itemWrapper {
+  list-style: none;
+}
+
+/* ── Item (the visible card) ─────────────────────────────────────────────────  */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  cursor: default;
+  width: 100%;
+  background: transparent;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-base);
+}
+
+/* Folders: interactive — pointer cursor, hover / active / focus states */
+.itemFolder {
+  cursor: pointer;
+}
+
+.itemFolder:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-border);
+}
+
+.itemFolder:active {
+  background: var(--color-tag-bg);
+  transform: scale(0.97);
+}
+
+.itemFolder:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  background: var(--color-surface-hover);
+}
+
+/* Files: display-only — slightly dimmed to signal non-interactivity */
+.itemFile {
+  opacity: 0.82;
+}
+
+/* ── Icon container ──────────────────────────────────────────────────────────  */
+.itemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+/* ── Item name ───────────────────────────────────────────────────────────────
+   text-overflow: ellipsis truncates long names.
+   The `title` attribute (set in JSX) shows the full name on hover.            */
+.itemName {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.35;
+}
+
+/* ── Item meta (item count / file size) ──────────────────────────────────────  */
+.itemMeta {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  line-height: 1.2;
+}
+
+/* ── Empty folder state ──────────────────────────────────────────────────────  */
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-12);
+  color: var(--color-text-muted);
+}
+
+.emptyText {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────  */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: var(--space-2);
+    padding: var(--space-3);
+  }
+}

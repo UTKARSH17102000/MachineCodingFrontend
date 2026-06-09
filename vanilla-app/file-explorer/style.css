@@ -1,0 +1,241 @@
+@import url('../style.css');
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.back { color: var(--text-muted); font-size: .875rem; }
+
+.page-header { display: flex; flex-direction: column; gap: .5rem; }
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subheading {
+  color: var(--text-muted);
+  font-size: .9rem;
+  max-width: 60ch;
+}
+
+/* ── Explorer window ─────────────────────────────────────────────────────────
+   overflow: hidden clips the breadcrumb/toolbar flush with the border-radius. */
+.explorer-pane {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Breadcrumb bar ──────────────────────────────────────────────────────────
+   overflow-x: auto lets the path scroll when deeply nested (8+ levels)
+   instead of wrapping. scrollbar-width: none hides the scrollbar visually
+   but keeps it functionally scrollable via touch/trackpad.                   */
+.breadcrumb {
+  padding: .625rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  flex-shrink: 0;
+}
+
+.breadcrumb::-webkit-scrollbar { display: none; }
+
+.breadcrumb-list {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.breadcrumb-btn {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--primary);
+  background: transparent;
+  border: none;
+  padding: .25rem .5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: background var(--transition);
+  line-height: 1.4;
+}
+
+.breadcrumb-btn:hover { background: var(--tag-bg); }
+
+.breadcrumb-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.breadcrumb-current {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--text);
+  padding: .25rem .5rem;
+  line-height: 1.4;
+}
+
+.breadcrumb-sep {
+  color: var(--text-muted);
+  user-select: none;
+  line-height: 1;
+}
+
+/* ── Toolbar ─────────────────────────────────────────────────────────────────  */
+.toolbar {
+  padding: .375rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+
+.item-count {
+  font-size: .75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+/* ── Grid wrapper — grows to fill remaining pane height ──────────────────────  */
+.grid-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── File/Folder grid ────────────────────────────────────────────────────────
+   repeat(auto-fill, minmax(140px, 1fr)):
+   auto-fill calculates column count from available width with zero JS.
+   minmax ensures each cell is at least 140px and grows evenly.              */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: .75rem;
+  padding: 1rem;
+  list-style: none;
+  margin: 0;
+  align-content: start;
+  flex: 1;
+}
+
+.item-wrapper { list-style: none; }
+
+/* ── Item base ───────────────────────────────────────────────────────────────  */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  padding: 1rem .75rem .75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  cursor: default;
+  width: 100%;
+  background: transparent;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform .1s ease;
+}
+
+/* Folders: interactive */
+.item-folder { cursor: pointer; }
+
+.item-folder:hover {
+  background: var(--surface-hover);
+  border-color: var(--border);
+}
+
+.item-folder:active {
+  background: var(--tag-bg);
+  transform: scale(0.97);
+}
+
+.item-folder:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  background: var(--surface-hover);
+}
+
+/* Files: display-only, slightly dimmed to signal non-interactivity */
+.item-file { opacity: .82; }
+
+/* ── Icon ───────────────────────────────────────────────────────────────────  */
+.item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+/* ── Name — truncated, full name on hover via title attribute ────────────────  */
+.item-name {
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--text);
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.35;
+}
+
+/* ── Meta (item count / file size) ──────────────────────────────────────────  */
+.item-meta {
+  font-size: .65rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  line-height: 1.2;
+}
+
+/* ── Empty folder state ──────────────────────────────────────────────────────  */
+.empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+.empty-text {
+  font-size: .875rem;
+  color: var(--text-muted);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────  */
+@media (max-width: 480px) {
+  .page { padding: 1rem; }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: .5rem;
+    padding: .75rem;
+  }
+}
