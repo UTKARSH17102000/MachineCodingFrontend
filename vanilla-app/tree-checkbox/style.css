@@ -1,0 +1,46 @@
+@import url('../style.css');
+
+.page { max-width: 600px; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+.back { color: var(--text-muted); font-size: .875rem; }
+.heading { font-size: 2rem; font-weight: 700; }
+.subheading { color: var(--text-muted); font-size: .875rem; }
+
+.demo { display: flex; flex-direction: column; gap: 1rem; }
+
+.selection-info {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--tag-bg);
+  padding: .4rem .875rem;
+  border-radius: 8px;
+  align-self: flex-start;
+}
+
+.tree { list-style: none; }
+
+.tree-node { display: flex; flex-direction: column; }
+
+.node-label {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .4rem .6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.node-label:hover { background: var(--surface-hover); }
+
+.node-checkbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.node-text { font-size: .875rem; }
+.node-count { font-size: .75rem; color: var(--text-muted); margin-left: auto; font-family: var(--font-mono); }
+
+.children { list-style: none; border-left: 2px solid var(--border); margin-left: 1.1rem; }

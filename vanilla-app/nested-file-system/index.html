@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nested File System — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Nested File System</h1>
+    <p class="subheading">Expandable file explorer with keyboard tree navigation and ARIA tree pattern.</p>
+
+    <div class="demo">
+      <div class="explorer">
+        <header class="explorer-header">
+          <span>EXPLORER</span>
+          <span id="selectedFile" class="selected-info"></span>
+        </header>
+        <ul id="tree" class="tree" role="tree" aria-label="File explorer"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

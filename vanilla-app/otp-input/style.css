@@ -1,0 +1,76 @@
+@import url('../style.css');
+
+.page { max-width: 600px; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+.back { color: var(--text-muted); font-size: .875rem; }
+.heading { font-size: 2rem; font-weight: 700; }
+.subheading { color: var(--text-muted); font-size: .875rem; }
+
+.demo { display: flex; justify-content: center; }
+
+.otp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.otp-label { font-size: .9375rem; font-weight: 500; }
+
+.otp-group { display: flex; gap: .75rem; }
+
+.otp-input {
+  width: 3rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  caret-color: var(--primary);
+  outline: none;
+}
+.otp-input:focus  { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(108,99,255,.25); }
+.otp-input.filled { border-color: var(--primary); }
+.otp-input.error  { border-color: #ef4444; }
+
+.otp-status { font-size: .875rem; min-height: 1.2em; }
+.otp-status.success { color: #4ade80; }
+.otp-status.error   { color: #f87171; }
+
+.otp-actions { display: flex; gap: .75rem; }
+
+.btn-primary {
+  padding: .625rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: .875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), opacity var(--transition);
+}
+.btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+.btn-primary:not(:disabled):hover { background: var(--primary-dk); }
+
+.btn-ghost {
+  padding: .625rem 1.5rem;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: .875rem;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--text-muted); }

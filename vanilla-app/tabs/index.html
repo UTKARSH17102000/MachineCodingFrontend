@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Tabs Component</h1>
+    <p class="subheading">Roving tabindex, arrow-key navigation, ARIA tab pattern.</p>
+
+    <div class="demo">
+      <div class="tab-widget">
+        <div role="tablist" aria-label="Frontend topics" class="tablist">
+          <button role="tab" aria-selected="true"  aria-controls="panel-react"  id="tab-react"  class="tab" tabindex="0">React</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-css"    id="tab-css"    class="tab" tabindex="-1">CSS</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-js"     id="tab-js"     class="tab" tabindex="-1">JavaScript</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-perf"   id="tab-perf"   class="tab" tabindex="-1">Performance</button>
+        </div>
+
+        <div id="panel-react" role="tabpanel" aria-labelledby="tab-react" class="tabpanel">
+          <h3>React</h3>
+          <p>A JavaScript library for building user interfaces using a component-based architecture. Key concepts: JSX, hooks, virtual DOM reconciliation, and context API.</p>
+        </div>
+        <div id="panel-css" role="tabpanel" aria-labelledby="tab-css" class="tabpanel" hidden>
+          <h3>CSS</h3>
+          <p>Cascading Style Sheets control the visual presentation of web pages. Modern CSS includes custom properties, Grid, Flexbox, container queries, and cascade layers.</p>
+        </div>
+        <div id="panel-js" role="tabpanel" aria-labelledby="tab-js" class="tabpanel" hidden>
+          <h3>JavaScript</h3>
+          <p>The programming language of the web. ES2024+ features include pattern matching, temporal API, and pipeline operator proposals building on decades of evolution.</p>
+        </div>
+        <div id="panel-perf" role="tabpanel" aria-labelledby="tab-perf" class="tabpanel" hidden>
+          <h3>Performance</h3>
+          <p>Web performance focuses on Core Web Vitals: LCP (loading), INP (interactivity), and CLS (visual stability). Tools: Lighthouse, Web Vitals, and Performance Observer API.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

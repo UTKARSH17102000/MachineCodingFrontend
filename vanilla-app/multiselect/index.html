@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiselect Dropdown — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Multiselect Dropdown</h1>
+    <p class="subheading">Select multiple options with chips, search filter, and keyboard navigation.</p>
+
+    <div class="demo">
+      <div id="multiselect" class="multiselect">
+        <div class="trigger-wrap">
+          <div id="trigger" class="trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-label="Select skills">
+            <div id="chips" class="chips"><span class="placeholder">Select skills…</span></div>
+            <span class="arrow" aria-hidden="true">▾</span>
+          </div>
+        </div>
+
+        <div id="dropdown" class="dropdown" hidden>
+          <input id="search" class="search" type="text" placeholder="Search…" aria-label="Search options" autocomplete="off" />
+          <label class="option select-all">
+            <input type="checkbox" id="selectAll"> All
+          </label>
+          <ul id="optionList" class="option-list" role="listbox" aria-label="Skills" aria-multiselectable="true"></ul>
+        </div>
+      </div>
+
+      <p class="result" id="result">0 selected</p>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

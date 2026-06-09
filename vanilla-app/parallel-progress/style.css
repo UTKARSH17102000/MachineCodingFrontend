@@ -1,0 +1,51 @@
+@import url('../style.css');
+
+.page { max-width: 700px; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+.back { color: var(--text-muted); font-size: .875rem; }
+.heading { font-size: 2rem; font-weight: 700; }
+.subheading { color: var(--text-muted); font-size: .875rem; }
+
+.demo { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.bar-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.bar-info { display: flex; justify-content: space-between; align-items: center; }
+.bar-name { font-size: .875rem; font-weight: 600; }
+.bar-pct  { font-size: .8rem; color: var(--text-muted); font-family: var(--font-mono); }
+
+.track {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 9999px;
+  transition: background .3s;
+}
+
+.bar-controls { display: flex; gap: .5rem; }
+
+.btn-sm {
+  padding: .3rem .75rem;
+  font-size: .75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.btn-sm:hover { border-color: var(--primary); }
+.btn-sm:disabled { opacity: .4; cursor: not-allowed; }

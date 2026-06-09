@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accordion — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Accordion</h1>
+    <p class="subheading">Collapsible sections. Single or multiple open mode. Keyboard accessible.</p>
+
+    <div class="demo">
+      <div class="mode-toggle">
+        <button class="mode-btn active" data-mode="single">Single open</button>
+        <button class="mode-btn" data-mode="multiple">Multiple open</button>
+      </div>
+
+      <div id="accordion" class="accordion" data-mode="single">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="panel-1" id="header-1">
+            <span>What is machine coding?</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </button>
+          <div id="panel-1" class="accordion-panel" role="region" aria-labelledby="header-1" hidden>
+            <div class="accordion-body">
+              Machine coding rounds are practical coding exercises where you build small UI components or features from scratch within a time constraint, typically 60–90 minutes.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="panel-2" id="header-2">
+            <span>Why are accessibility patterns important?</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </button>
+          <div id="panel-2" class="accordion-panel" role="region" aria-labelledby="header-2" hidden>
+            <div class="accordion-body">
+              Accessible components ensure all users — including those using screen readers or keyboard navigation — can interact with your application. It also demonstrates senior engineering quality.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="panel-3" id="header-3">
+            <span>What are CSS custom properties?</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </button>
+          <div id="panel-3" class="accordion-panel" role="region" aria-labelledby="header-3" hidden>
+            <div class="accordion-body">
+              CSS custom properties (variables) let you define reusable values like colors, spacing, and typography in one place, making theme switching and design token systems possible.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false" aria-controls="panel-4" id="header-4">
+            <span>How does smooth height animation work?</span>
+            <span class="chevron" aria-hidden="true">›</span>
+          </button>
+          <div id="panel-4" class="accordion-panel" role="region" aria-labelledby="header-4" hidden>
+            <div class="accordion-body">
+              Animating from height 0 to "auto" directly isn't possible in CSS. The trick is to use max-height with a large value, or measure the scrollHeight in JS and set an explicit pixel height before transitioning.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

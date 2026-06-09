@@ -1,0 +1,73 @@
+@import url('../style.css');
+
+.page { max-width: 600px; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+.back { color: var(--text-muted); font-size: .875rem; }
+.heading { font-size: 2rem; font-weight: 700; }
+.subheading { color: var(--text-muted); font-size: .875rem; }
+
+.demo {}
+
+.combobox-wrap { display: flex; flex-direction: column; gap: .5rem; }
+.combo-label   { font-size: .875rem; font-weight: 600; }
+
+.combobox { position: relative; }
+
+.combo-input {
+  width: 100%;
+  padding: .75rem 2.5rem .75rem .875rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: .9375rem;
+  outline: none;
+  transition: border-color var(--transition);
+  box-sizing: border-box;
+}
+.combo-input:focus, .combo-input[aria-expanded="true"] { border-color: var(--primary); }
+
+.combo-clear {
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: .875rem;
+}
+.combo-clear:hover { color: var(--text); }
+.combo-clear[hidden] { display: none; }
+
+.combo-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0; right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 100;
+  list-style: none;
+  padding: .375rem 0;
+}
+.combo-list[hidden] { display: none; }
+
+.combo-option {
+  padding: .6rem .875rem;
+  cursor: pointer;
+  font-size: .875rem;
+  transition: background var(--transition);
+}
+.combo-option:hover,
+.combo-option[aria-selected="true"] { background: var(--surface-hover); }
+.combo-option.focused { background: var(--surface-hover); outline: 2px solid var(--primary); outline-offset: -2px; }
+
+.combo-option mark { background: transparent; color: var(--primary); font-weight: 700; }
+
+.no-results { padding: .875rem; font-size: .875rem; color: var(--text-muted); }
+
+.result { font-size: .875rem; color: var(--primary); font-weight: 600; min-height: 1.2em; }

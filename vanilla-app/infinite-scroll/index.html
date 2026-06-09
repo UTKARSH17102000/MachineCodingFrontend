@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infinite Scroll — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Infinite Scroll</h1>
+    <p class="subheading">IntersectionObserver sentinel — skeleton loaders, end-of-data state.</p>
+
+    <div id="feed" class="feed" aria-label="Article feed" aria-live="polite"></div>
+    <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+    <p id="endMsg" class="end-msg" hidden>You've reached the end ✓</p>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

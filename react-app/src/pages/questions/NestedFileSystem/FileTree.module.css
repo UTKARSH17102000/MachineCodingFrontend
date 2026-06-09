@@ -1,0 +1,69 @@
+.page { display: flex; flex-direction: column; gap: var(--space-6); }
+.pageHeader { display: flex; flex-direction: column; gap: var(--space-2); }
+.heading { font-size: var(--text-3xl); font-weight: 700; letter-spacing: -0.02em; }
+.subheading { font-size: var(--text-base); color: var(--color-text-muted); }
+
+.explorer {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+  overflow-y: auto;
+}
+
+.sidebarTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0 var(--space-4) var(--space-2);
+}
+
+.tree { list-style: none; }
+
+.node {
+  cursor: pointer;
+  outline: none;
+  border-radius: var(--radius-sm);
+}
+
+.nodeInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) 0;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.node:hover  .nodeInner { background-color: var(--color-surface-hover); }
+.node:focus-visible .nodeInner { outline: 2px solid var(--color-primary); }
+
+.node.selected .nodeInner {
+  background-color: var(--color-tag-bg);
+  color: var(--color-primary);
+}
+
+.icon { font-size: 0.85rem; flex-shrink: 0; }
+.name { font-size: var(--text-sm); }
+
+.children { list-style: none; }
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+}
+
+.placeholder { font-size: var(--text-sm); color: var(--color-text-muted); }

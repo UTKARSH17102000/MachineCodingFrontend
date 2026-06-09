@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress Bar — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Progress Bar</h1>
+    <p class="subheading">Determinate, indeterminate, and stepped variants with full ARIA support.</p>
+
+    <div class="demo">
+
+      <section class="variant-section">
+        <h2>Determinate</h2>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="File upload progress">
+          <div class="progress-fill determinate" id="det-fill"></div>
+        </div>
+        <div class="controls">
+          <button class="btn" id="detStart">Start</button>
+          <button class="btn" id="detReset">Reset</button>
+          <span id="det-val" class="pct-label">0%</span>
+        </div>
+      </section>
+
+      <section class="variant-section">
+        <h2>Indeterminate</h2>
+        <div class="progress-track" role="progressbar" aria-label="Loading" aria-busy="true">
+          <div class="progress-fill indeterminate"></div>
+        </div>
+        <p class="hint">Always animating — no known endpoint.</p>
+      </section>
+
+      <section class="variant-section">
+        <h2>Stepped (5 steps)</h2>
+        <div id="stepped-bar" class="stepped-bar" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" aria-label="Onboarding steps">
+          <!-- Steps injected by JS -->
+        </div>
+        <div class="controls">
+          <button class="btn" id="stepPrev">← Prev</button>
+          <button class="btn" id="stepNext">Next →</button>
+          <span id="step-val" class="pct-label">Step 0 of 5</span>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

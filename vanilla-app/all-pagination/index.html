@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Pagination Types — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">All Pagination Types</h1>
+    <p class="subheading">Three variants: page numbers with ellipsis, Load More, and Jump-to-page.</p>
+
+    <section class="variant">
+      <h2>1. Page Numbers with Ellipsis</h2>
+      <ul id="pagedList" class="item-list" aria-label="Paged items"></ul>
+      <nav aria-label="Paged navigation" id="pageNav" class="page-nav"></nav>
+    </section>
+
+    <section class="variant">
+      <h2>2. Load More</h2>
+      <ul id="loadList" class="item-list" aria-label="Load more items"></ul>
+      <button id="loadMoreBtn" class="btn-primary">Load More</button>
+    </section>
+
+    <section class="variant">
+      <h2>3. Jump to Page</h2>
+      <ul id="jumpList" class="item-list" aria-label="Jump-to-page items"></ul>
+      <nav aria-label="Jump-to-page navigation" class="jump-nav">
+        <button id="jumpPrev" class="btn-nav" aria-label="Previous page">‹</button>
+        <form id="jumpForm" class="jump-form">
+          <label for="jumpInput" class="jump-label">Page</label>
+          <input id="jumpInput" type="number" class="jump-input" min="1" value="1" aria-label="Jump to page" />
+          <span id="jumpTotal" class="jump-total"></span>
+        </form>
+        <button id="jumpNext" class="btn-nav" aria-label="Next page">›</button>
+      </nav>
+    </section>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

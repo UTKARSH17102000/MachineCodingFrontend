@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carousel — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Carousel</h1>
+    <p class="subheading">Auto-playing slideshow — pause-on-hover, swipe, dots, ARIA live region.</p>
+
+    <div class="demo">
+      <div id="carousel" class="carousel" aria-roledescription="carousel" aria-label="Featured topics">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack" aria-live="polite">
+            <!-- Slides -->
+            <div class="slide" aria-roledescription="slide" aria-label="Slide 1 of 5" aria-hidden="false">
+              <div class="slide-inner" style="background:linear-gradient(135deg,#6c63ff,#3a35a8)">
+                <h3>React 19</h3>
+                <p>Server components, async transitions, and the new compiler — production ready.</p>
+              </div>
+            </div>
+            <div class="slide" aria-roledescription="slide" aria-label="Slide 2 of 5" aria-hidden="true">
+              <div class="slide-inner" style="background:linear-gradient(135deg,#10b981,#047857)">
+                <h3>CSS Animations</h3>
+                <p>View Transitions API, scroll-driven animations, and @starting-style.</p>
+              </div>
+            </div>
+            <div class="slide" aria-roledescription="slide" aria-label="Slide 3 of 5" aria-hidden="true">
+              <div class="slide-inner" style="background:linear-gradient(135deg,#f59e0b,#b45309)">
+                <h3>TypeScript 5</h3>
+                <p>Const type parameters, decorators, and variadic tuple types land in stable.</p>
+              </div>
+            </div>
+            <div class="slide" aria-roledescription="slide" aria-label="Slide 4 of 5" aria-hidden="true">
+              <div class="slide-inner" style="background:linear-gradient(135deg,#ef4444,#991b1b)">
+                <h3>Accessibility</h3>
+                <p>WCAG 2.2 is now the standard — focus appearance, dragging, and target sizes.</p>
+              </div>
+            </div>
+            <div class="slide" aria-roledescription="slide" aria-label="Slide 5 of 5" aria-hidden="true">
+              <div class="slide-inner" style="background:linear-gradient(135deg,#60a5fa,#1d4ed8)">
+                <h3>Performance</h3>
+                <p>Core Web Vitals: INP replaces FID — focus on interaction responsiveness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="prevBtn" aria-label="Previous slide">‹</button>
+          <div class="dots" id="dots" role="tablist" aria-label="Select slide"></div>
+          <button class="carousel-btn" id="nextBtn" aria-label="Next slide">›</button>
+          <button class="play-pause-btn" id="playPauseBtn" aria-label="Pause autoplay">⏸</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toast — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Reusable Toast</h1>
+    <p class="subheading">Notification manager with 4 types, auto-dismiss, manual close, and 6 positions.</p>
+
+    <div class="demo">
+      <fieldset class="controls">
+        <legend>Type</legend>
+        <label><input type="radio" name="type" value="success" checked> Success</label>
+        <label><input type="radio" name="type" value="error"> Error</label>
+        <label><input type="radio" name="type" value="warning"> Warning</label>
+        <label><input type="radio" name="type" value="info"> Info</label>
+      </fieldset>
+
+      <fieldset class="controls">
+        <legend>Position</legend>
+        <select id="posSelect">
+          <option value="bottom-right">Bottom Right</option>
+          <option value="bottom-left">Bottom Left</option>
+          <option value="top-right">Top Right</option>
+          <option value="top-left">Top Left</option>
+          <option value="top-center">Top Center</option>
+          <option value="bottom-center">Bottom Center</option>
+        </select>
+      </fieldset>
+
+      <fieldset class="controls">
+        <legend>Duration (ms)</legend>
+        <input id="durationInput" type="number" min="500" max="10000" step="500" value="3000" />
+      </fieldset>
+
+      <button id="showBtn" class="btn-primary">Show Toast</button>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

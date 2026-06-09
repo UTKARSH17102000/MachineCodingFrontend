@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complex Sidebar — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Overlay -->
+    <div id="overlay" class="overlay" aria-hidden="true" hidden></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation" aria-modal="false">
+      <div class="sidebar-header">
+        <span class="sidebar-brand">⬡ WorkSpace</span>
+        <button id="closeBtn" class="close-btn" aria-label="Close sidebar">✕</button>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item-wrap">
+            <button class="nav-item top-level" aria-label="Dashboard">
+              <span class="nav-icon" aria-hidden="true">⊞</span> Dashboard
+            </button>
+          </li>
+          <li class="nav-item-wrap">
+            <button class="nav-item top-level expandable" aria-expanded="false" aria-controls="projects-sub">
+              <span class="nav-icon" aria-hidden="true">📁</span> Projects
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <ul class="subnav" id="projects-sub" hidden>
+              <li><button class="nav-item sub-level">Active</button></li>
+              <li><button class="nav-item sub-level">Archived</button></li>
+              <li class="nav-item-wrap">
+                <button class="nav-item sub-level expandable" aria-expanded="false" aria-controls="shared-sub">
+                  Shared <span class="nav-chevron" aria-hidden="true">›</span>
+                </button>
+                <ul class="subnav" id="shared-sub" hidden>
+                  <li><button class="nav-item sub-level deep">Team</button></li>
+                  <li><button class="nav-item sub-level deep">Org-wide</button></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item-wrap">
+            <button class="nav-item top-level expandable" aria-expanded="false" aria-controls="analytics-sub">
+              <span class="nav-icon" aria-hidden="true">📊</span> Analytics
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <ul class="subnav" id="analytics-sub" hidden>
+              <li><button class="nav-item sub-level">Traffic</button></li>
+              <li><button class="nav-item sub-level">Revenue</button></li>
+            </ul>
+          </li>
+          <li><button class="nav-item top-level"><span class="nav-icon" aria-hidden="true">⚙</span> Settings</button></li>
+          <li><button class="nav-item top-level"><span class="nav-icon" aria-hidden="true">?</span> Help</button></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="user-avatar" aria-hidden="true">U</span>
+        <div>
+          <p class="user-name">You</p>
+          <p class="user-role">Frontend Engineer</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <a class="back" href="../index.html">← Back to Hub</a>
+      <button id="toggleBtn" class="toggle-btn" aria-expanded="false" aria-controls="sidebar" aria-label="Open sidebar">
+        ☰ Open sidebar
+      </button>
+      <h1 class="heading">Complex Sidebar</h1>
+      <p class="subheading">Multi-level nav — overlay with focus trap, Escape closes, multi-depth expand/collapse.</p>
+      <div class="hint">
+        <p>Sidebar demonstrates:</p>
+        <ul>
+          <li>Multi-level expand/collapse</li>
+          <li>Overlay closes on click-outside</li>
+          <li>Focus trap (Tab cycles inside when open)</li>
+          <li>Escape key to close</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+.page { display: flex; flex-direction: column; gap: var(--space-8); }
+.pageHeader { display: flex; flex-direction: column; gap: var(--space-2); }
+.heading { font-size: var(--text-3xl); font-weight: 700; letter-spacing: -0.02em; }
+.subheading { font-size: var(--text-base); color: var(--color-text-muted); }
+
+.demo { display: flex; flex-direction: column; gap: var(--space-6); }
+
+.demoSection {
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.demoTitle { font-size: var(--text-lg); font-weight: 600; }
+
+.demoActions { display: flex; gap: var(--space-3); }
+
+.btn {
+  padding: var(--space-2) var(--space-6);
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn:hover { background-color: var(--color-primary-dark); }
+
+.btnSecondary {
+  padding: var(--space-2) var(--space-6);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btnSecondary:hover { border-color: var(--color-primary); color: var(--color-text); }
+
+/* ProgressBar component styles */
+.wrapper { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.labelRow { display: flex; justify-content: space-between; align-items: center; }
+
+.label { font-size: var(--text-sm); color: var(--color-text-muted); }
+.pct   { font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-mono); }
+.stepMeta { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+/* Determinate track */
+.track {
+  height: 8px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  transition: width 100ms linear;
+}
+
+/* Indeterminate */
+.indeterminateTrack {
+  position: relative;
+  overflow: hidden;
+}
+
+.indeterminateBar {
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  animation: indeterminate 1.4s ease-in-out infinite;
+}
+
+@keyframes indeterminate {
+  0%   { left: -40%; }
+  100% { left: 110%; }
+}
+
+/* Stepped */
+.steppedTrack {
+  display: flex;
+  gap: 4px;
+}
+
+.step {
+  flex: 1;
+  height: 8px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-pill);
+  transition: background-color var(--transition-base);
+}
+
+.stepActive { background-color: var(--color-primary); }

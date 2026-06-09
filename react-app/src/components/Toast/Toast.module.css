@@ -1,0 +1,98 @@
+/* Container positions */
+.container {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  pointer-events: none;
+  max-width: 400px;
+  width: 100%;
+}
+
+.bottom_right  { bottom: 0; right: 0; }
+.bottom_left   { bottom: 0; left: 0; }
+.bottom_center { bottom: 0; left: 50%; transform: translateX(-50%); }
+.top_right     { top: 0; right: 0; }
+.top_left      { top: 0; left: 0; }
+.top_center    { top: 0; left: 50%; transform: translateX(-50%); }
+
+/* Toast */
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid transparent;
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  pointer-events: all;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 200ms ease forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(110%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+.success { border-color: #4ade80; }
+.error   { border-color: #f87171; }
+.warning { border-color: #facc15; }
+.info    { border-color: var(--color-primary); }
+
+.icon {
+  font-size: 1rem;
+  line-height: 1.5;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.success .icon { color: #4ade80; }
+.error   .icon { color: #f87171; }
+.warning .icon { color: #facc15; }
+.info    .icon { color: var(--color-primary); }
+
+.message {
+  flex: 1;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.close {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  padding: 0 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.close:hover {
+  color: var(--color-text);
+}
+
+/* Auto-dismiss progress bar */
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-primary);
+  transform-origin: left;
+  animation: shrink linear forwards;
+}
+
+@keyframes shrink {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+.success .progress { background-color: #4ade80; }
+.error   .progress { background-color: #f87171; }
+.warning .progress { background-color: #facc15; }

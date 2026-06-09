@@ -1,0 +1,139 @@
+@import url('../style.css');
+
+.page { max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column; gap: 2rem; }
+.back { color: var(--text-muted); font-size: .875rem; }
+.heading { font-size: 2rem; font-weight: 700; }
+.subheading { color: var(--text-muted); font-size: .875rem; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Column */
+.column {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  min-height: 280px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.column.drag-over { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(108,99,255,.25); }
+
+.col-header { display: flex; align-items: center; gap: .5rem; }
+.col-dot { width: .6rem; height: .6rem; border-radius: 50%; flex-shrink: 0; }
+.col-title { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; flex: 1; }
+.col-count {
+  background: var(--bg);
+  border-radius: 9999px;
+  font-size: .7rem;
+  font-weight: 600;
+  padding: 0 .5rem;
+  color: var(--text-muted);
+}
+
+.card-list { display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+
+/* Card */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  cursor: grab;
+  transition: box-shadow var(--transition);
+  position: relative;
+}
+.card:hover { box-shadow: 0 4px 16px rgba(108,99,255,.2); }
+.card.dragging { opacity: .4; }
+
+.card-top { display: flex; align-items: center; justify-content: space-between; }
+.card-tag {
+  font-size: .65rem; font-weight: 700;
+  background: var(--tag-bg); color: var(--tag-text);
+  border-radius: 9999px; padding: 1px .5rem;
+}
+.card-priority { width: .45rem; height: .45rem; border-radius: 50%; }
+.card-title { font-size: .8rem; font-weight: 500; line-height: 1.4; }
+
+.card-footer { position: relative; }
+.move-btn {
+  font-size: .7rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px .45rem;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+.move-btn:hover { color: var(--primary); border-color: var(--primary); }
+
+.move-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+  list-style: none;
+  z-index: 50;
+  min-width: 130px;
+  padding: .25rem 0;
+}
+.move-menu-item {
+  display: block;
+  width: 100%;
+  padding: .4rem .75rem;
+  font-size: .75rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  transition: background var(--transition);
+}
+.move-menu-item:hover { background: var(--surface-hover); }
+
+/* Add card */
+.add-btn {
+  width: 100%;
+  padding: .45rem .75rem;
+  text-align: left;
+  font-size: .8rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.add-btn:hover { background: var(--surface-hover); color: var(--text); }
+
+.add-form { display: flex; flex-direction: column; gap: .4rem; }
+.add-input {
+  width: 100%;
+  padding: .4rem .6rem;
+  background: var(--bg);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: .8rem;
+  font-family: inherit;
+  resize: none;
+  box-sizing: border-box;
+}
+.add-actions { display: flex; gap: .4rem; }
+.add-confirm { flex: 1; padding: .3rem; background: var(--primary); color: #fff; border: none; border-radius: 6px; font-size: .75rem; font-weight: 600; cursor: pointer; }
+.add-confirm:hover { background: var(--primary-dk); }
+.add-cancel  { padding: .3rem .5rem; background: transparent; border: 1px solid var(--border); border-radius: 6px; font-size: .75rem; cursor: pointer; color: var(--text-muted); }

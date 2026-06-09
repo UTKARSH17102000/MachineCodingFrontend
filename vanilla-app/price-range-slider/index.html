@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Price Range Slider — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Price Range Slider</h1>
+    <p class="subheading">Dual-thumb range slider with custom styling and z-index collision fix.</p>
+
+    <div class="demo">
+      <div class="slider-card">
+        <div class="price-display">
+          <div class="price-box">
+            <span class="price-label">Min</span>
+            <span class="price-value" id="minDisplay">$0</span>
+          </div>
+          <div class="price-sep">—</div>
+          <div class="price-box">
+            <span class="price-label">Max</span>
+            <span class="price-value" id="maxDisplay">$1000</span>
+          </div>
+        </div>
+
+        <div class="slider-wrap">
+          <div class="slider-track" id="sliderTrack"></div>
+          <input
+            type="range"
+            id="minRange"
+            class="range-input"
+            min="0" max="1000" step="10" value="0"
+            aria-label="Minimum price"
+            aria-valuemin="0" aria-valuemax="1000"
+          />
+          <input
+            type="range"
+            id="maxRange"
+            class="range-input"
+            min="0" max="1000" step="10" value="1000"
+            aria-label="Maximum price"
+            aria-valuemin="0" aria-valuemax="1000"
+          />
+        </div>
+
+        <p class="result" id="result">Showing results for $0 – $1000</p>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

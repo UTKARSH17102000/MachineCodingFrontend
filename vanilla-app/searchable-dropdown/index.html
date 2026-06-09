@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Searchable Dropdown — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Searchable Dropdown</h1>
+    <p class="subheading">Combobox with debounced search, keyboard nav, and highlighted match text.</p>
+
+    <div class="demo">
+      <div class="combobox-wrap">
+        <label class="combo-label" for="comboInput">Programming Language</label>
+        <div class="combobox" id="combobox">
+          <input
+            id="comboInput"
+            class="combo-input"
+            type="text"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-controls="comboList"
+            aria-haspopup="listbox"
+            placeholder="Search languages…"
+            autocomplete="off"
+          />
+          <button class="combo-clear" id="comboClear" aria-label="Clear selection" hidden>✕</button>
+          <ul id="comboList" class="combo-list" role="listbox" aria-label="Programming languages" hidden></ul>
+        </div>
+        <p class="result" id="comboResult" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

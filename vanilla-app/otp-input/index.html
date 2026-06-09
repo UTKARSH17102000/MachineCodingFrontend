@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTP Input — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">OTP Input</h1>
+    <p class="subheading">6-digit one-time password — auto-advance, backspace navigation, paste support.</p>
+
+    <div class="demo">
+      <div class="otp-card">
+        <p class="otp-label">Enter your 6-digit code</p>
+        <div id="otp-group" class="otp-group" role="group" aria-label="One-time password input">
+          <!-- Inputs injected by JS -->
+        </div>
+        <p id="otp-status" class="otp-status" aria-live="polite"></p>
+        <div class="otp-actions">
+          <button id="verifyBtn" class="btn-primary" disabled>Verify</button>
+          <button id="resetBtn" class="btn-ghost">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

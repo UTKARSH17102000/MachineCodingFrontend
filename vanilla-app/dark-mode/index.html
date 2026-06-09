@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Mode — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+    <h1 class="heading">Dark Mode</h1>
+    <p class="subheading">Theme toggle — persists to localStorage, respects prefers-color-scheme.</p>
+
+    <div class="demo">
+      <button id="toggleBtn" class="toggle-btn" aria-label="Switch to light mode" aria-pressed="false">
+        <span id="icon" aria-hidden="true">☀️</span>
+        <span id="label">Switch to Light</span>
+      </button>
+
+      <div class="preview-grid">
+        <div class="preview-card">
+          <h3>Surface Card</h3>
+          <p>This card adapts its background and text color based on the active theme.</p>
+          <button class="demo-btn">Primary Action</button>
+        </div>
+        <div class="preview-card">
+          <h3>Color Tokens</h3>
+          <div class="swatches">
+            <span class="swatch swatch-bg">BG</span>
+            <span class="swatch swatch-surface">Surface</span>
+            <span class="swatch swatch-primary">Primary</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
