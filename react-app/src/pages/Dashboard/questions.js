@@ -168,6 +168,14 @@ export const QUESTIONS = [
     description: 'Directory-style file browser — click folders to enter, breadcrumb to go back. O(1) path-as-object-reference navigation with unlimited nesting depth.',
   },
   {
+    id: 'form-builder',
+    title: 'Form Builder',
+    path: '/form-builder',
+    category: 'Interaction',
+    difficulty: 'Hard',
+    description: 'Configure and add text, number, email, textarea, checkbox, select, and radio fields. Live preview with controlled inputs; submit logs all values as an object.',
+  },
+  {
     id: 'state-management',
     title: 'State Management Showdown',
     path: '/state-management',

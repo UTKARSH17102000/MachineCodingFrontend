@@ -23,6 +23,7 @@ import ComplexSidebar from '@/pages/questions/ComplexSidebar/ComplexSidebar';
 import JiraBoard from '@/pages/questions/JiraBoard/JiraBoard';
 import StateManagement from '@/pages/questions/StateManagement/StateManagement';
 import FileExplorer from '@/pages/questions/FileExplorer/FileExplorer';
+import FormBuilder from '@/pages/questions/FormBuilder/FormBuilder';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
       { path: 'jira-board',         element: <JiraBoard /> },
       { path: 'state-management',   element: <StateManagement /> },
       { path: 'file-explorer',      element: <FileExplorer /> },
+      { path: 'form-builder',       element: <FormBuilder /> },
     ],
   },
 ]);

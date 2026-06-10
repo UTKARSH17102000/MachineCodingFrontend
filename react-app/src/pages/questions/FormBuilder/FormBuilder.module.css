@@ -1,0 +1,579 @@
+/* ── Page shell ──────────────────────────────────────────────────────────────  */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.heading {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.subheading {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 62ch;
+}
+
+/* ── Two-column workspace ────────────────────────────────────────────────────
+   300px fixed panel + 1fr preview.
+   align-items: start prevents the shorter column from stretching.            */
+.workspace {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* ── Builder panel (left) ────────────────────────────────────────────────────
+   position: sticky keeps the panel in view while scrolling a long form.
+   max-height + overflow-y lets the panel itself scroll if it overflows.      */
+.panel {
+  position: sticky;
+  top: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.panelHeader {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.panelTitle {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.panelBody {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionLabel {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Field type grid ─────────────────────────────────────────────────────────
+   4 columns — 7 buttons wraps cleanly to 4 + 3.                              */
+.typeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+
+.typeBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: var(--space-2) var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+  font-family: inherit;
+}
+
+.typeBtn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+/* Active type: color-mix tints the primary — same pattern as StateManagement */
+.typeBtnActive {
+  background: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.typeBtnActive:hover {
+  background: color-mix(in srgb, var(--color-primary) 22%, transparent);
+}
+
+.typeBtnIcon {
+  font-size: var(--text-base);
+  line-height: 1;
+}
+
+.typeBtnLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* ── Draft config form ───────────────────────────────────────────────────────  */
+.draftConfig {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.required {
+  color: #f87171;
+}
+
+.input,
+.textarea {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  line-height: 1.5;
+  transition: border-color var(--transition-fast);
+  outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.inputError {
+  border-color: #f87171;
+}
+
+.inputError:focus {
+  border-color: #f87171;
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.errorMsg {
+  font-size: var(--text-xs);
+  color: #f87171;
+}
+
+.hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkboxInput {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 calc(-1 * var(--space-4));
+}
+
+/* ── Add button ──────────────────────────────────────────────────────────────  */
+.addBtn {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  width: 100%;
+}
+
+.addBtn:hover {
+  background: var(--color-primary-dark);
+}
+
+.addBtn:active {
+  transform: scale(0.98);
+}
+
+/* ── Preview pane (right column) ─────────────────────────────────────────────  */
+.previewPane {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.previewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.previewTitle {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.fieldCount {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────────  */
+.emptyForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-12);
+  color: var(--color-text-muted);
+}
+
+.emptyIcon {
+  color: var(--color-text-muted);
+}
+
+.emptyTitle {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.emptyHint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 30ch;
+  line-height: 1.6;
+}
+
+/* ── Preview form ────────────────────────────────────────────────────────────  */
+.previewForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  gap: var(--space-6);
+}
+
+.fieldList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── FieldWrapper ────────────────────────────────────────────────────────────
+   Controls are absolutely positioned top-right and opacity-hidden.
+   They appear via :hover or :focus-within — keyboard users are covered.      */
+.fieldWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-right: 6.5rem; /* reserve space for the 3 control buttons */
+}
+
+.fieldControls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: var(--space-1);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.fieldWrapper:hover .fieldControls,
+.fieldWrapper:focus-within .fieldControls {
+  opacity: 1;
+}
+
+.controlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.controlBtn:hover:not(:disabled) {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.controlBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.controlBtnRemove:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  border-color: #f87171;
+}
+
+/* ── Preview field labels ────────────────────────────────────────────────────  */
+.previewLabel {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* ── Preview inputs ──────────────────────────────────────────────────────────  */
+.previewInput,
+.previewTextarea,
+.previewSelect {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  line-height: 1.5;
+  transition: border-color var(--transition-fast);
+  outline: none;
+  width: 100%;
+}
+
+.previewInput:focus,
+.previewTextarea:focus,
+.previewSelect:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.previewTextarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.previewSelect {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238888aa' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
+}
+
+/* ── Checkbox in preview ─────────────────────────────────────────────────────  */
+.previewCheckboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.previewCheckbox {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Radio group in preview ──────────────────────────────────────────────────  */
+.previewFieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.previewLegend {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  padding: 0;
+}
+
+.previewRadioLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.previewRadio {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Submit button ───────────────────────────────────────────────────────────  */
+.submitBtn {
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color var(--transition-fast);
+}
+
+.submitBtn:hover {
+  background: var(--color-primary-dark);
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+/* ── Submit result panel ─────────────────────────────────────────────────────  */
+.resultPanel {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.resultTitle {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.resultBadge {
+  font-size: var(--text-xs);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, #4ade80 12%, transparent);
+  color: #4ade80;
+  font-family: var(--font-mono);
+}
+
+.resultCode {
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────  */
+@media (max-width: 768px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  /* Remove sticky on mobile — panel scrolls in normal flow */
+  .panel {
+    position: static;
+    max-height: none;
+  }
+
+  .fieldWrapper {
+    padding-right: 0;
+  }
+
+  /* On mobile, always show controls (no hover available) */
+  .fieldControls {
+    position: static;
+    opacity: 1;
+    justify-content: flex-end;
+    margin-top: var(--space-1);
+  }
+}
