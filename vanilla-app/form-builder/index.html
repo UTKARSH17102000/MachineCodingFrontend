@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Builder — Vanilla JS</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../index.html">← Back to Hub</a>
+
+    <div class="page-header">
+      <h1 class="heading">Form Builder</h1>
+      <p class="subheading">
+        Configure fields in the left panel — they appear in the live form instantly.
+        Submit to log all values as a JavaScript object.
+      </p>
+    </div>
+
+    <div class="workspace">
+
+      <!-- ── Left: builder panel ── -->
+      <aside id="panel" class="panel" aria-label="Field builder">
+        <div class="panel-header">
+          <span class="panel-title">Add Field</span>
+        </div>
+        <div class="panel-body">
+          <div class="section-label">Field Type</div>
+          <!-- Populated by renderTypeGrid() -->
+          <div id="type-grid" class="type-grid" role="group" aria-label="Field type"></div>
+
+          <div class="divider"></div>
+
+          <!-- Populated by renderDraftConfig() -->
+          <div id="draft-config" class="draft-config"></div>
+
+          <button id="add-btn" type="button" class="add-btn">+ Add to Form</button>
+        </div>
+      </aside>
+
+      <!-- ── Right: live preview ── -->
+      <div class="preview-pane">
+        <div class="preview-header">
+          <span class="preview-title">Live Preview</span>
+          <span id="field-count" class="field-count">0 fields</span>
+        </div>
+        <!-- Populated by renderPreview() -->
+        <div id="preview-body" class="preview-body"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
