@@ -210,6 +210,42 @@
   padding: var(--space-8) 0;
 }
 
+/* ── Code / Solutions card ───────────────────────────────────────────────────── */
+.codeCard { border-left: 3px solid #4db5f9; }
+
+.fileList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-family: monospace;
+}
+
+.fileExtBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.fileExtJsx { background-color: rgba(97, 218, 251, 0.15); color: #61dafb; }
+.fileExtJs  { background-color: rgba(247, 223, 30, 0.15);  color: #f7df1e; }
+.fileExtCss { background-color: rgba(77, 181, 249, 0.15);  color: #4db5f9; }
+
 /* ── Doc card accent ─────────────────────────────────────────────────────────── */
 .docCard {
   border-left: 3px solid var(--color-primary);

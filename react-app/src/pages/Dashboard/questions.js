@@ -6,6 +6,11 @@ export const QUESTIONS = [
     category: 'Data Display',
     difficulty: 'Easy',
     description: 'Client-side paginated list with prev/next controls, page number buttons, and ellipsis gaps.',
+    files: [
+      'Pagination/Pagination.jsx',
+      'Pagination/Pagination.module.css',
+      'Pagination/usePagination.js',
+    ],
   },
   {
     id: 'dark-mode',
@@ -14,6 +19,10 @@ export const QUESTIONS = [
     category: 'Global Feature',
     difficulty: 'Easy',
     description: 'Theme toggle with localStorage persistence and prefers-color-scheme detection on first visit.',
+    files: [
+      'DarkMode/DarkMode.jsx',
+      'DarkMode/DarkMode.module.css',
+    ],
   },
   {
     id: 'toast',
@@ -22,6 +31,10 @@ export const QUESTIONS = [
     category: 'UI Component',
     difficulty: 'Medium',
     description: 'Notification system with 4 types, auto-dismiss, progress bar, and multiple position variants.',
+    files: [
+      'Toast/ToastDemo.jsx',
+      'Toast/ToastDemo.module.css',
+    ],
   },
   {
     id: 'accordion',
@@ -30,6 +43,11 @@ export const QUESTIONS = [
     category: 'UI Component',
     difficulty: 'Easy',
     description: 'Collapsible sections with single-open and multi-open modes. Full keyboard navigation.',
+    files: [
+      'Accordion/Accordion.jsx',
+      'Accordion/Accordion.module.css',
+      'Accordion/useAccordion.js',
+    ],
   },
   {
     id: 'tabs',
@@ -38,6 +56,11 @@ export const QUESTIONS = [
     category: 'UI Component',
     difficulty: 'Easy',
     description: 'Accessible tab strip with roving tabindex, arrow key navigation, and ARIA tablist pattern.',
+    files: [
+      'Tabs/Tabs.jsx',
+      'Tabs/Tabs.module.css',
+      'Tabs/useTabs.js',
+    ],
   },
   {
     id: 'otp-input',
@@ -46,6 +69,11 @@ export const QUESTIONS = [
     category: 'Form Control',
     difficulty: 'Medium',
     description: '6-digit OTP input with auto-advance, backspace navigation, and paste support.',
+    files: [
+      'OTPInput/OTPInput.jsx',
+      'OTPInput/OTPInput.module.css',
+      'OTPInput/useOTPInput.js',
+    ],
   },
   {
     id: 'progress-bar',
@@ -54,6 +82,11 @@ export const QUESTIONS = [
     category: 'UI Component',
     difficulty: 'Easy',
     description: 'Determinate, indeterminate, and stepped progress bar variants with ARIA progressbar role.',
+    files: [
+      'ProgressBar/ProgressBarDemo.jsx',
+      'ProgressBar/ProgressBar.jsx',
+      'ProgressBar/ProgressBar.module.css',
+    ],
   },
   {
     id: 'parallel-progress',
@@ -62,6 +95,11 @@ export const QUESTIONS = [
     category: 'UI Component',
     difficulty: 'Medium',
     description: 'Multiple independent progress bars running concurrently using requestAnimationFrame.',
+    files: [
+      'ParallelProgressBar/ParallelProgressBar.jsx',
+      'ParallelProgressBar/ParallelProgressBar.module.css',
+      'ParallelProgressBar/useProgressTimer.js',
+    ],
   },
   {
     id: 'price-range-slider',
@@ -70,6 +108,11 @@ export const QUESTIONS = [
     category: 'Form Control',
     difficulty: 'Medium',
     description: 'Dual-thumb range slider with min/max clamping, custom track fill, and keyboard support.',
+    files: [
+      'PriceRangeSlider/PriceRangeSlider.jsx',
+      'PriceRangeSlider/PriceRangeSlider.module.css',
+      'PriceRangeSlider/usePriceRange.js',
+    ],
   },
   {
     id: 'multiselect',
@@ -78,6 +121,11 @@ export const QUESTIONS = [
     category: 'Form Control',
     difficulty: 'Medium',
     description: 'Dropdown with checkboxes, search filter, select-all, chip display, and keyboard navigation.',
+    files: [
+      'MultiselectDropdown/MultiselectDropdown.jsx',
+      'MultiselectDropdown/MultiselectDropdown.module.css',
+      'MultiselectDropdown/useMultiselect.js',
+    ],
   },
   {
     id: 'searchable-dropdown',
@@ -86,6 +134,11 @@ export const QUESTIONS = [
     category: 'Form Control',
     difficulty: 'Medium',
     description: 'Combobox with debounced filtering, keyboard navigation, and aria-activedescendant pattern.',
+    files: [
+      'SearchableDropdown/SearchableDropdown.jsx',
+      'SearchableDropdown/SearchableDropdown.module.css',
+      'SearchableDropdown/useSearchableDropdown.js',
+    ],
   },
   {
     id: 'carousel',
@@ -94,6 +147,11 @@ export const QUESTIONS = [
     category: 'UI Component',
     difficulty: 'Medium',
     description: 'Slide carousel with autoplay, pause-on-hover, dot indicators, and touch swipe support.',
+    files: [
+      'Carousel/Carousel.jsx',
+      'Carousel/Carousel.module.css',
+      'Carousel/useCarousel.js',
+    ],
   },
   {
     id: 'infinite-scroll',
@@ -102,6 +160,11 @@ export const QUESTIONS = [
     category: 'Data Display',
     difficulty: 'Medium',
     description: 'List with IntersectionObserver sentinel, skeleton loaders, and end-of-data state handling.',
+    files: [
+      'InfiniteScroll/InfiniteScroll.jsx',
+      'InfiniteScroll/InfiniteScroll.module.css',
+      'InfiniteScroll/useInfiniteScroll.js',
+    ],
   },
   {
     id: 'all-pagination',
@@ -110,6 +173,11 @@ export const QUESTIONS = [
     category: 'Data Display',
     difficulty: 'Medium',
     description: 'Page number, Load More, and Jump-to-page pagination patterns side by side.',
+    files: [
+      'AllPagination/AllPagination.jsx',
+      'AllPagination/AllPagination.module.css',
+      'AllPagination/useLoadMore.js',
+    ],
   },
   {
     id: 'tic-tac-toe',
@@ -118,6 +186,11 @@ export const QUESTIONS = [
     category: 'Game',
     difficulty: 'Easy',
     description: '2-player Tic Tac Toe with win/draw detection, move history time-travel, and restart.',
+    files: [
+      'TicTacToe/TicTacToe.jsx',
+      'TicTacToe/TicTacToe.module.css',
+      'TicTacToe/useTicTacToe.js',
+    ],
   },
   {
     id: 'nested-file-system',
@@ -126,6 +199,12 @@ export const QUESTIONS = [
     category: 'Recursive UI',
     difficulty: 'Hard',
     description: 'File explorer tree with expand/collapse, selection, and full ARIA tree keyboard navigation.',
+    files: [
+      'NestedFileSystem/FileTree.jsx',
+      'NestedFileSystem/FileTree.module.css',
+      'NestedFileSystem/useFileTree.js',
+      'NestedFileSystem/mockData.js',
+    ],
   },
   {
     id: 'nested-comments',
@@ -134,6 +213,12 @@ export const QUESTIONS = [
     category: 'Recursive UI',
     difficulty: 'Medium',
     description: 'Reddit-style recursive comment threads with replies, collapse/expand, and vote buttons.',
+    files: [
+      'NestedComments/CommentThread.jsx',
+      'NestedComments/CommentThread.module.css',
+      'NestedComments/useComments.js',
+      'NestedComments/mockComments.js',
+    ],
   },
   {
     id: 'tree-checkbox',
@@ -142,6 +227,12 @@ export const QUESTIONS = [
     category: 'Recursive UI',
     difficulty: 'Hard',
     description: 'Tree with tri-state checkboxes — parent/child propagation and indeterminate state.',
+    files: [
+      'TreeCheckbox/TreeCheckbox.jsx',
+      'TreeCheckbox/TreeCheckbox.module.css',
+      'TreeCheckbox/useTreeCheckbox.js',
+      'TreeCheckbox/mockTree.js',
+    ],
   },
   {
     id: 'complex-sidebar',
@@ -150,6 +241,10 @@ export const QUESTIONS = [
     category: 'Navigation',
     difficulty: 'Hard',
     description: 'Multi-level collapsible sidebar with overlay mode, focus trap, and responsive behaviour.',
+    files: [
+      'ComplexSidebar/ComplexSidebar.jsx',
+      'ComplexSidebar/ComplexSidebar.module.css',
+    ],
   },
   {
     id: 'jira-board',
@@ -158,6 +253,12 @@ export const QUESTIONS = [
     category: 'Interaction',
     difficulty: 'Hard',
     description: 'Kanban board with HTML5 DnD — drag cards between columns, keyboard move fallback.',
+    files: [
+      'JiraBoard/JiraBoard.jsx',
+      'JiraBoard/JiraBoard.module.css',
+      'JiraBoard/useKanban.js',
+      'JiraBoard/mockBoard.js',
+    ],
   },
   {
     id: 'file-explorer',
@@ -166,6 +267,12 @@ export const QUESTIONS = [
     category: 'Navigation',
     difficulty: 'Medium',
     description: 'Directory-style file browser — click folders to enter, breadcrumb to go back. O(1) path-as-object-reference navigation with unlimited nesting depth.',
+    files: [
+      'FileExplorer/FileExplorer.jsx',
+      'FileExplorer/FileExplorer.module.css',
+      'FileExplorer/useFileExplorer.js',
+      'FileExplorer/mockData.js',
+    ],
   },
   {
     id: 'form-builder',
@@ -174,6 +281,11 @@ export const QUESTIONS = [
     category: 'Interaction',
     difficulty: 'Hard',
     description: 'Configure and add text, number, email, textarea, checkbox, select, and radio fields. Live preview with controlled inputs; submit logs all values as an object.',
+    files: [
+      'FormBuilder/FormBuilder.jsx',
+      'FormBuilder/FormBuilder.module.css',
+      'FormBuilder/useFormBuilder.js',
+    ],
   },
   {
     id: 'state-management',
@@ -182,5 +294,18 @@ export const QUESTIONS = [
     category: 'State & Data Fetching',
     difficulty: 'Hard',
     description: '7 ways to fetch and display posts from a real API — fetch, Axios, Context API, Redux Classic, RTK, RTK Query, and Zustand. Includes live comparison table.',
+    files: [
+      'StateManagement/StateManagement.jsx',
+      'StateManagement/StateManagement.module.css',
+      'StateManagement/components/PostsList.jsx',
+      'StateManagement/variants/FetchVariant.jsx',
+      'StateManagement/variants/AxiosVariant.jsx',
+      'StateManagement/variants/ContextVariant/PostsContext.jsx',
+      'StateManagement/variants/ContextVariant/ContextVariant.jsx',
+      'StateManagement/variants/ReduxClassicVariant/ReduxClassicVariant.jsx',
+      'StateManagement/variants/RTKVariant/RTKVariant.jsx',
+      'StateManagement/variants/RTKQueryVariant/RTKQueryVariant.jsx',
+      'StateManagement/variants/ZustandVariant/ZustandVariant.jsx',
+    ],
   },
 ];

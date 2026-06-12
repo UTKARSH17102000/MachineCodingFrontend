@@ -4,9 +4,9 @@ import { QUESTIONS } from './questions';
 import styles from './Dashboard.module.css';
 
 const DIFFICULTY_CLASS = {
-  Easy: styles.tagEasy,
+  Easy:   styles.tagEasy,
   Medium: styles.tagMedium,
-  Hard: styles.tagHard,
+  Hard:   styles.tagHard,
 };
 
 const FILTER_ACTIVE_CLASS = {
@@ -14,6 +14,12 @@ const FILTER_ACTIVE_CLASS = {
   Easy:   styles.filterBtnActiveEasy,
   Medium: styles.filterBtnActiveMedium,
   Hard:   styles.filterBtnActiveHard,
+};
+
+const FILE_EXT_CLASS = {
+  jsx: styles.fileExtJsx,
+  js:  styles.fileExtJs,
+  css: styles.fileExtCss,
 };
 
 const DIFFICULTIES = ['All', 'Easy', 'Medium', 'Hard'];
@@ -73,6 +79,15 @@ export default function Dashboard() {
           onClick={() => setTab('docs')}
         >
           Interview Docs
+          <span className={styles.tabCount}>{filtered.length}</span>
+        </button>
+        <button
+          role="tab"
+          aria-selected={activeTab === 'code'}
+          className={`${styles.tab} ${activeTab === 'code' ? styles.tabActive : ''}`}
+          onClick={() => setTab('code')}
+        >
+          Solutions
           <span className={styles.tabCount}>{filtered.length}</span>
         </button>
       </div>
@@ -138,6 +153,45 @@ export default function Dashboard() {
                   </p>
                   <Link to={`/docs/${q.id}`} className={styles.viewButton}>
                     Interview Guide →
+                  </Link>
+                </article>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {activeTab === 'code' && (
+        <div role="tabpanel" aria-label="Solutions">
+          {filtered.length === 0 ? (
+            <p className={styles.emptyState}>No solutions match the selected difficulty.</p>
+          ) : (
+            <div className={styles.grid}>
+              {filtered.map((q) => (
+                <article key={q.id} className={`${styles.card} ${styles.codeCard}`}>
+                  <div className={styles.cardTop}>
+                    <span className={styles.categoryTag}>{q.category}</span>
+                    <span className={`${styles.difficultyTag} ${DIFFICULTY_CLASS[q.difficulty]}`}>
+                      {q.difficulty}
+                    </span>
+                  </div>
+                  <h2 className={styles.cardTitle}>{q.title}</h2>
+                  <ul className={styles.fileList} aria-label="Source files">
+                    {q.files.map((f) => {
+                      const filename = f.split('/').pop();
+                      const ext      = filename.split('.').pop();
+                      return (
+                        <li key={f} className={styles.fileItem}>
+                          <span className={`${styles.fileExtBadge} ${FILE_EXT_CLASS[ext] ?? ''}`}>
+                            {ext}
+                          </span>
+                          {filename}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <Link to={`/code/${q.id}`} className={styles.viewButton}>
+                    View Code →
                   </Link>
                 </article>
               ))}
