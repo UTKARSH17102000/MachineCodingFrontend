@@ -168,6 +168,48 @@
   line-height: 1.4;
 }
 
+/* ── Difficulty filter bar ───────────────────────────────────────────────────── */
+.filterBar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: var(--space-1) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.filterBtn:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.filterBtnActive { font-weight: 600; }
+
+.filterBtnActiveAll    { background-color: var(--color-primary); color: #fff;     border-color: var(--color-primary); }
+.filterBtnActiveEasy   { background-color: #163d2b;              color: #4ade80;  border-color: #4ade80; }
+.filterBtnActiveMedium { background-color: #3d2e10;              color: #facc15;  border-color: #facc15; }
+.filterBtnActiveHard   { background-color: #3d1010;              color: #f87171;  border-color: #f87171; }
+
+/* ── Empty state ─────────────────────────────────────────────────────────────── */
+.emptyState {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  padding: var(--space-8) 0;
+}
+
 /* ── Doc card accent ─────────────────────────────────────────────────────────── */
 .docCard {
   border-left: 3px solid var(--color-primary);
